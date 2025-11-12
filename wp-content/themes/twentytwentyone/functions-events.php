@@ -54,6 +54,27 @@ function events_theme_setup() {
 // Flush rewrite rules saat theme diaktivasi
 add_action('after_switch_theme', 'flush_rewrite_rules');
 
+// Buat halaman upcoming-events otomatis saat theme diaktivasi
+add_action('after_switch_theme', 'create_upcoming_events_page');
+
+function create_upcoming_events_page() {
+    // Cek apika halaman sudah ada
+    if (get_page_by_path('upcoming-events')) {
+        return;
+    }
+
+    // Buat halaman baru
+    $page_data = array(
+        'post_title'    => 'Upcoming Events',
+        'post_content'  => 'Halaman ini akan menampilkan event-event yang akan datang.',
+        'post_status'   => 'publish',
+        'post_type'     => 'page',
+        'post_name'     => 'upcoming-events'
+    );
+
+    wp_insert_post($page_data);
+}
+
 // Custom function untuk mendapatkan field Pods dengan aman
 function get_event_field($field_name) {
     if (function_exists('pods')) {
@@ -361,11 +382,11 @@ function upcoming_events_shortcode($atts) {
 
     .upcoming-event-button {
         display: inline-block;
-        background: #0073aa;
-        color: white;
+        background: #0073aa !important;
+        color: white !important;
         padding: 0.75rem 1.5rem;
         border-radius: 8px;
-        text-decoration: none;
+        text-decoration: none !important;
         font-weight: 600;
         text-align: center;
         transition: all 0.3s ease;
@@ -375,10 +396,25 @@ function upcoming_events_shortcode($atts) {
     }
 
     .upcoming-event-button:hover {
-        background: #005a87;
+        background: #005a87 !important;
         transform: translateY(-1px);
-        color: white;
-        text-decoration: none;
+        color: white !important;
+        text-decoration: none !important;
+    }
+
+    .upcoming-event-button:active {
+        background: #0073aa !important;
+        color: white !important;
+    }
+
+    .upcoming-event-button:visited {
+        background: #0073aa !important;
+        color: white !important;
+    }
+
+    .upcoming-event-button:focus {
+        background: #0073aa !important;
+        color: white !important;
     }
 
     .upcoming-events-footer {
@@ -389,11 +425,11 @@ function upcoming_events_shortcode($atts) {
 
     .upcoming-events-view-all {
         display: inline-block;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        color: white !important;
         padding: 1rem 2rem;
         border-radius: 50px;
-        text-decoration: none;
+        text-decoration: none !important;
         font-weight: 600;
         transition: all 0.3s ease;
     }
@@ -401,8 +437,26 @@ function upcoming_events_shortcode($atts) {
     .upcoming-events-view-all:hover {
         transform: translateY(-2px);
         box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
-        color: white;
-        text-decoration: none;
+        color: white !important;
+        text-decoration: none !important;
+    }
+
+    .upcoming-events-view-all:active {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        color: white !important;
+        text-decoration: none !important;
+    }
+
+    .upcoming-events-view-all:visited {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        color: white !important;
+        text-decoration: none !important;
+    }
+
+    .upcoming-events-view-all:focus {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        color: white !important;
+        text-decoration: none !important;
     }
 
     .upcoming-events-empty {
