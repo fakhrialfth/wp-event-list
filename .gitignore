@@ -29,11 +29,8 @@ wp-content/object-cache.php
 wp-content/wp-cache-config.php
 wp-config-sample.php
 
-# Ignore documentation and screenshots (for clean repo)
-docs/screenshots/*.png
-docs/screenshots/*.jpg
-docs/screenshots/*.jpeg
-docs/screenshots/*.gif
+# Documentation and screenshots are now included in repo
+# docs/screenshots/ - Commented out to allow screenshots in repo
 
 # Development files
 .vscode/
