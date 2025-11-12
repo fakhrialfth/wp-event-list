@@ -4,13 +4,13 @@ A modern and feature-rich event management platform built with WordPress, featur
 
 ## 📸 Screenshots
 
-![Homepage Preview](docs/screenshots/homepage.png)
+![Homepage Preview](https://raw.githubusercontent.com/fakhrialfth/wp-event-list/main/docs/screenshots/homepage.png)
 *Modern homepage with hero section and event highlights*
 
-![Event Listing](docs/screenshots/event-listing.png)
+![Event Listing](https://raw.githubusercontent.com/fakhrialfth/wp-event-list/main/docs/screenshots/event-listing.png)
 *Event archive with slider navigation*
 
-![Event Details](docs/screenshots/event-details.png)
+![Event Details](https://raw.githubusercontent.com/fakhrialfth/wp-event-list/main/docs/screenshots/event-details.png)
 *Single event page with countdown timer and registration*
 
 ### Server Requirements
@@ -31,8 +31,8 @@ A modern and feature-rich event management platform built with WordPress, featur
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/wordpress-event-platform.git
-cd wordpress-event-platform
+git clone https://github.com/fakhrialfth/wp-event-list.git
+cd wp-event-list
 ```
 
 ### Local Development Setup
@@ -67,7 +67,7 @@ cd wordpress-event-platform
 ## 📁 Project Structure
 
 ```
-wordpress-event-test/
+wp-event-list/
 ├── wp-content/
 │   └── themes/
 │       └── twentytwentyone/
