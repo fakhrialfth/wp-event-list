@@ -1,0 +1,29 @@
+INSTRUKSI UNTUK MENGECEK TEMPLATE EVENTS:
+
+Untuk memastikan template Events Anda berfungsi dengan benar, ikuti langkah berikut:
+
+1. BROWSER URL YANG PERLU DIAKSES:
+   - Archive Events: http://localhost/wordpress-event-test/events/
+   - Archive Events (alternatif): http://localhost/wordpress-event-test/?post_type=my_event
+   - Single Event: http://localhost/wordpress-event-test/my_event/nama-event-anda/
+
+2. JIKA TIDAK BERFUNGSI, LAKUKAN LANGKAH BERIKUT:
+   - Masuk ke WordPress Admin
+   - Pergi ke Settings > Permalinks
+   - Klik "Save Changes" tanpa mengubah apapun (ini untuk flush rewrite rules)
+   - Refresh browser
+
+3. JIKA MASIH TIDAK BERFUNGSI:
+   - Pastikan Anda memiliki minimal 1 event yang sudah dibuat
+   - Cek di wp-admin > Pods Admin > Edit Pods > Events
+   - Pastikan "Advanced Settings" > "Rewrite" enable dan slug diatur ke "events"
+
+4. DEBUG MODE:
+   - Buka wp-config.php
+   - Tambahkan: define('WP_DEBUG', true);
+   - Cari pesan error di browser
+
+5. ALTERNATIF JIKA MASIH TIDAK BERFUNGSI:
+   - Gunakan WordPress Customizer
+   - Buat page baru dengan slug "events"
+   - Assign template "Archive Events" ke page tersebut
